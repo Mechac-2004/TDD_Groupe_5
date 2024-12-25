@@ -11,7 +11,7 @@ class UEsController extends Controller
      */
     public function index()
     {
-        //
+        return view('UEs.index');
     }
 
     /**
