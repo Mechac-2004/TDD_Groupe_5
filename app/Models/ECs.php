@@ -25,4 +25,9 @@ class ECs extends Model
     {
         return $this->belongsTo(UniteEnseignement::class, 'ue_id');
     }
+
+    public function notes()
+    {
+        return $this->hasMany(Note::class);
+    }
 }
