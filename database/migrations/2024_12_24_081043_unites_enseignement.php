@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('code')->unique(); // Code unique de l'UE (ex: UE11)
             $table->string('nom'); 
             $table->integer('credits_ects'); 
-            $table->tinyInteger('semestre')->unsigned(); 
+            $table->integer('semestre'); 
             $table->timestamps(); // Champs created_at et updated_at
         });
     }
