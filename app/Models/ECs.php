@@ -23,7 +23,7 @@ class ECs extends Model
     // Relation avec l'unité d'enseignement
     public function uniteEnseignement()
     {
-        return $this->belongsTo(UniteEnseignement::class, 'ue_id');
+        return $this->belongsTo(UEs::class, 'ue_id');
     }
 
     public function notes()

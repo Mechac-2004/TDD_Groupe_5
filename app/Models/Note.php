@@ -22,6 +22,6 @@ class Note extends Model
 
     public function elementsConstitutifs()
     {
-        return $this->belongsTo(ElementConstitutif::class, 'ec_id');
+        return $this->belongsTo(ECs::class, 'ec_id');
     }
 }
