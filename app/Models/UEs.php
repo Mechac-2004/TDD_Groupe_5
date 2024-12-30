@@ -11,7 +11,7 @@ class UEs extends Model
 
     protected $table = 'unites_enseignement';
 
-
+    protected $primaryKey = 'id';
     protected $fillable = [
         'code',
         'nom',

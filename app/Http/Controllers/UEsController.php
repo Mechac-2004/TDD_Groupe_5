@@ -12,7 +12,7 @@ class UEsController extends Controller
      */
     public function index()
     {
-        $UEs = UEs::all(); // Récupérer toutes les UEs
+        $UEs = UEs::all(); 
         return view('UEs.index', compact('UEs'));
     }
 
@@ -51,27 +51,31 @@ class UEsController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(UEs $ue)
+    public function edit($id)
     {
-        //dd($ue);
-        return view('UEs.edit')->with('ue', $ue);
+        $UE = UEs::findOrFail($id);
+        return view('UEs.edit', compact('UE'));
     }
+
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, UEs $ue)
+    public function update(Request $request, $id)
     {
+        $UE = UEs::findOrFail($id); // Recherche de l'enregistrement par ID
+
         $request->validate([
-            'code' => 'required|max:10|unique:unites_enseignement,code,' . $ue->id,
+            'code' => 'required|max:10|unique:unites_enseignement,code,' . $id,
             'nom' => 'required|string|max:255',
             'credits_ects' => 'required|integer|min:1',
             'semestre' => 'required|integer|min:1|max:6',
         ]);
 
-        $ue->update($request->all());
+        $UE->update($request->all());
         return redirect()->route('UEs.index')->with('success', 'UE mise à jour avec succès !');
     }
+
 
     /**
      * Remove the specified resource from storage.

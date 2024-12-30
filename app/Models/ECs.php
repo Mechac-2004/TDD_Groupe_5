@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\UEs;
+
 
 class ECs extends Model
 {
@@ -23,7 +25,7 @@ class ECs extends Model
     // Relation avec l'unité d'enseignement
     public function uniteEnseignement()
     {
-        return $this->belongsTo(UniteEnseignement::class, 'ue_id');
+        return $this->belongsTo(UEs::class, 'ue_id');
     }
 
     public function notes()
