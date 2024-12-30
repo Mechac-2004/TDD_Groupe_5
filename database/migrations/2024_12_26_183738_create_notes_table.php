@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('etudiant_id')->constrained('etudiants');
             $table->foreignId('ec_id')->constrained('elements_constitutifs');
-            $table->decimal('note', 2, 2);
+            $table->decimal('note', 4, 2);
             $table->enum('session', ['normale', 'rattrapage']);
             $table->date('date_evaluation');
             $table->timestamps();

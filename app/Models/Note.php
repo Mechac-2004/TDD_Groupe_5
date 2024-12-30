@@ -10,10 +10,15 @@ class Note extends Model
 
     use HasFactory;
 
-    protected $table = 'note';
+    protected $table = 'notes';
 
-
-    protected $fillable = ['etudiant_id', 'ec_id', 'note', 'session', 'date_evaluation'];
+    protected $fillable = [
+        'etudiant_id',
+        'ec_id',
+        'note',
+        'session',
+        'date_evaluation'
+    ];
 
     public function etudiant()
     {
