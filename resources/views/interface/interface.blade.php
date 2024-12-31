@@ -3,36 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GESTION DES NOTES</title>
-    @vite('resources/css/app.css')
+    <title>@yield('title', 'Gestion des UEs et ECs')</title>
+    @vite('resources/css/app.css') <!-- Charger les styles Tailwind -->
 </head>
-<body class="bg-gray-100">
-    <!-- Navbar -->
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Navigation -->
     <nav class="bg-blue-600 text-white shadow-lg">
-        <div class="container mx-auto px-4">
-            <div class="flex justify-between items-center py-4">
-                <a href="https://www.hr-cafe.com/modules-hr-cafe/logiciel-rh-gestion-notes-frais/" class="text-2xl font-bold">
-                Gestion de notes 
-                </a>
-                <ul class="flex space-x-4">
-                    <li>
-                        <a href="/" class="hover:text-gray-300">Accueil</a>
-                    </li>
-                    <li>
-                        <a href="/about" class="hover:text-gray-300">infos</a>
-                    </li>
-                    <li>
-                        <a href="/services" class="hover:text-gray-300">notes</a>
-                    </li>
-                    <li>
-                        <a href="/contact" class="hover:text-gray-300">Resultat</a>
-                    </li>
-                </ul>
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="" class="text-xl font-bold">Système de Gestion des Notes UniversitaireS - LMD</a>
+            <div>         
+                 <a href="{}" class="px-4 py-2 hover:bg-gray-700 rounded">Unités d'Enseignement</a>
+                <a href="ECs.create" class="px-4 py-2 hover:bg-gray-700 rounded">Éléments Constitutifs</a>
             </div>
         </div>
     </nav>
-    <main class="container mx-auto mt-8">
+
+    <!-- Contenu principal -->
+    <div class="container mx-auto mt-8 px-4">
         @yield('content')
-    </main>
+    </div>
+
+    <!-- Pied de page -->
+    <footer class="bg-blue-600 text-white shadow-lg">
+        &copy; {{ date('Y') }} Système de Gestion des Notes UniversitaireS - LMD. Tous droits réservés.
+    </footer>
 </body>
 </html>
+
+
