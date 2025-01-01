@@ -17,4 +17,8 @@ Route::get('/', function () {
 Route::get('/UEs', function(){
     return view('UEs.create');
 });
+
+Route::get('/ECs', function(){
+    return view('ECs.create');
+});
 // Route::resource('UEs', UEsController::class);

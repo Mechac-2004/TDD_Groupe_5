@@ -22,6 +22,7 @@ class ECsController extends Controller
      */
     public function create()
     {
+        return view('ECs.create');
        
     }
 
@@ -30,7 +31,15 @@ class ECsController extends Controller
      */
     public function store(Request $request)
     {
-        
+        $request->validate([
+            'code' => 'required|unique:elements_constitutifs,code|max:10',
+            'nom' => 'required|string|max:255',
+            'coefficient' => 'required|numeric|min:0',
+            'ue_id' => 'required|exists:unites_enseignement,id',
+        ]);
+
+        ECs::create($request->all());
+        return redirect()->route('ECs.index')->with('success', 'Élément Constitutif ajouté avec succès !');
     }
 
 
