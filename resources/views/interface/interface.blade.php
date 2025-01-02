@@ -13,8 +13,8 @@
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
             <a href="" class="text-xl font-bold">Système de Gestion des Notes UniversitaireS - LMD</a>
             <div>         
-                 <a href="{}" class="px-4 py-2 hover:bg-gray-700 rounded">Unités d'Enseignement</a>
-                <a href="ECs.create" class="px-4 py-2 hover:bg-gray-700 rounded">Éléments Constitutifs</a>
+                 <a href="{{route('UEs')}}" class="px-4 py-2 hover:bg-gray-700 rounded">Unités d'Enseignement</a>
+                <a href="{{route('ECs')}}" class="px-4 py-2 hover:bg-gray-700 rounded">Éléments Constitutifs</a>
             </div>
         </div>
     </nav>
