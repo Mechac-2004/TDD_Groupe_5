@@ -9,35 +9,43 @@ use App\Models\UEs;
 
 class UEsController extends Controller
 {
+    public function create()
+{
+    $ues = UEs::all();  // Chargez les UEs si nécessaire
+    return view('UEs.create', compact('ues'));
+}
+
+public function store(Request $request)
+{
+    $validatedData = $request->validate([
+        'ues.*.code' => 'required|string|max:10',
+        'ues.*.nom' => 'required|string|max:255',
+        'ues.*.credits_ects' => 'required|integer',
+        'ues.*.semestre' => 'required|in:1,2',
+    ]);
+
+    foreach ($validatedData['ues'] as $ueData) {
+        Ue::create($ueData);
+    }
+
+    return redirect()->route('UEs.create')->with('success', 'Les UEs ont été ajoutées avec succès.');
+}
    
     public function index()
     {
         $ues = UEs::all(); 
-        // dd($ues);
         return view('UEs.index', compact('ues'));
         // return view('UEs.index')->name('ues');
     }
 
-  
-    public function store(Request $request)
-    {
-        $request->validate([
-            'code' => 'required|unique:unites_enseignement,code|max:10',
-            'nom' => 'required|string|max:255',
-            'credits_ects' => 'required|integer|min:1',
-            'semestre' => 'required|integer|min:1|max:6',
-        ]);
-
-        UEs::create($request->all());
-        return redirect()->route('UEs.index')->with('success', 'UE ajoutée avec succès !');
-    }
 
     /**
      * Display the specified resource.
      */
     public function show(string $ue)
     {
-        
+        $ues = Ue::all();
+    return view('form', compact('ues'));
     }
 
     /**

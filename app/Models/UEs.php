@@ -24,4 +24,6 @@ class UEs extends Model
     {
         return $this->hasMany(ElementConstitutif::class, 'ue_id');
     }
+
+    
 }
