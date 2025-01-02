@@ -25,32 +25,20 @@ public function store(Request $request)
     ]);
 
     foreach ($validatedData['ues'] as $ueData) {
-        Ue::create($ueData);
+        ues::create($ueData);
     }
 
-    return redirect()->route('UEs.create')->with('success', 'Les UEs ont été ajoutées avec succès.');
+    return redirect()->route('liste')->with('success', 'Les UEs ont été ajoutées avec succès.');
 }
    
     public function index()
     {
+        
         $ues = UEs::all(); 
         return view('UEs.index', compact('ues'));
-        // return view('UEs.index')->name('ues');
     }
 
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $ue)
-    {
-        $ues = Ue::all();
-    return view('form', compact('ues'));
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit($id)
     {
         

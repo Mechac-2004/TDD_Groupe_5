@@ -17,5 +17,7 @@ Route::get('/', function () {
 Route::get('/UEs', [UEsController::class, 'create'])->name('UEs');
 Route::post('/UEs', [UEsController::class, 'store'])->name('store');
 
+Route::get('/liste', [UEsController::class, 'index'])->name('liste');
+
 Route::get('/ECs', function(){return view('ECs.create');}) ->name('ECs');
 Route::post('/ECs', [ECsController::class, 'store'])->name('store_ecs');
