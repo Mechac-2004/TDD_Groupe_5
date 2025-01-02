@@ -15,7 +15,8 @@
                 <th class="border border-gray-300 px-4 py-2">Étudiant</th>
                 <th class="border border-gray-300 px-4 py-2">Niveau</th>
                 <th class="border border-gray-300 px-4 py-2">Unité d'Enseignement</th>
-                <th class="border border-gray-300 px-4 py-2">ECU</th>
+                <th class="border border-gray-300 px-4 py-2">Nom EC</th>
+                <th class="border border-gray-300 px-4 py-2">Coeff EC</th>
                 <th class="border border-gray-300 px-4 py-2">Note</th>
                 <th class="border border-gray-300 px-4 py-2">Session</th>
                 <th class="border border-gray-300 px-4 py-2">Date d'Évaluation</th>
@@ -29,6 +30,7 @@
                     <td class="border border-gray-300 px-4 py-2">{{ $note->etudiant_niveau }}</td>
                     <td class="border border-gray-300 px-4 py-2">{{ $note->ue_nom }}</td>
                     <td class="border border-gray-300 px-4 py-2">{{ $note->ec_nom }}</td>
+                    <td class="border border-gray-300 px-4 py-2">{{ $note->ec_coeff }}</td>
                     <td class="border border-gray-300 px-4 py-2">{{ $note->note }}</td>
                     <td class="border border-gray-300 px-4 py-2">{{ $note->session }}</td>
                     <td class="border border-gray-300 px-4 py-2">{{ $note->date_evaluation }}</td>

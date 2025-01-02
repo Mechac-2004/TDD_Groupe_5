@@ -36,7 +36,7 @@
                         <td class="border border-gray-300 px-4 py-2">{{ $etudiant->niveau }}</td>
                         <td class="border border-gray-300 px-4 py-2">
                             <a href="{{ route('etudiants.edit', $etudiant) }}" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Modifier</a>
-                            <a href="#" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Voir les stats</a>
+                            <a href="{{ route('etudiants.stats', $etudiant) }}" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Voir les stats</a>
                         </td>
                     </tr>
                 @endforeach

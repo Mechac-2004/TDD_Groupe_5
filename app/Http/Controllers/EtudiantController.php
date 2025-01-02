@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Etudiant;
+use App\Models\UEs;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -67,6 +68,45 @@ class EtudiantController extends Controller
 
         return redirect()->route('etudiants.index')->with('success', 'Étudiant mis à jour avec succès.');
     }
+
+    public function showStats(Etudiant $etudiant)
+    {
+        // Récupérer les notes de l'étudiant avec leurs EC et leurs UE
+        $notes = $etudiant->notes()->with(['elementsConstitutifs.uniteEnseignement'])->get();
+    
+        // Organiser les données pour chaque UE
+        $stats = $notes->groupBy(function ($note) {
+            return $note->elementsConstitutifs->uniteEnseignement->id;
+        })->map(function ($notesParUE) {
+            $ue = $notesParUE->first()->elementsConstitutifs->uniteEnseignement;
+    
+            $somme = 0;
+            $totalCoefficient = 0;
+    
+            foreach ($ue->elementsConstitutifs as $ec) {
+                $noteEC = $notesParUE->firstWhere('ec_id', $ec->id);
+                if ($noteEC) {
+                    $somme += $noteEC->note * $ec->coefficient;
+                    $totalCoefficient += $ec->coefficient;
+                }
+            }
+    
+            $moyenneUE = $totalCoefficient > 0 ? $somme / $totalCoefficient : null;
+    
+            return [
+                'ue' => $ue,
+                'elementsConstitutifs' => $ue->elementsConstitutifs,
+                'notes' => $notesParUE,
+                'moyenne' => $moyenneUE,
+            ];
+        });
+    
+        // Calcul de la moyenne générale
+        $moyenneGenerale = $stats->filter(fn($stat) => $stat['moyenne'] !== null)->avg('moyenne');
+    
+        return view('Etudiants.stats', compact('etudiant', 'stats', 'moyenneGenerale'));
+    }    
+
 
     // Méthode pour générer le Matricule de l'étudiant
     private function genererNumeroEtudiant()

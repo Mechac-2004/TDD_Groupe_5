@@ -23,6 +23,7 @@ class NoteController extends Controller
             'etudiants.nom as etudiant_nom',
             'etudiants.prenom as etudiant_prenom',
             'elements_constitutifs.nom as ec_nom',
+            'elements_constitutifs.coefficient as ec_coeff',
             'unites_enseignement.nom as ue_nom'
         )
         ->join('etudiants', 'notes.etudiant_id', '=', 'etudiants.id')
