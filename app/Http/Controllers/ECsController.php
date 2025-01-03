@@ -8,18 +8,15 @@ use App\Models\UEs;
 
 class ECsController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    
     public function index()
     {
-        
+        $ecs = ECs::all();  
+        return view('ECs.index', compact('ecs'));
 
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+    
     public function create()
     {
         $ecs = ECs::all(); 
@@ -27,9 +24,6 @@ class ECsController extends Controller
        
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
         $request->validate([
@@ -43,23 +37,12 @@ class ECsController extends Controller
             ecs::create($ecData);
         }
     
-        return redirect()->route('liste')->with('success', 'Les UE Bien enregistre');
-        // ECs::create($request->all());
-        // return redirect()->route('ECs.index')->with('success', 'Élément Constitutif ajouté avec succès !');
+        return redirect()->route('ECs.store')->with('success', 'Les EC Bien enregistre');
     }
-
-
-    public function show(string $id)
-    {
-        
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit($id)
     {
-       
+        $ecs = UEs::findOrFail($id);
+        return view('ECs.edit', compact('ecs')); 
     }
 
     /**
@@ -67,7 +50,22 @@ class ECsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
+        $EC = ECs::findOrFail($id);
+
+        $request->validate([
+            'code' => 'required|max:10|unique:elements_constitutifs,code,' . $id,
+            'nom' => 'required|string|max:255',
+            'coefficient' => 'required|numeric|min:0',
+            'ue_id' => 'required|exists:unites_enseignement,id',
+        ]);
+        $ecs = ECs::findOrFail($id);
+        $ues->update([
+            'code' => $request->input('code'),
+            'nom' => $request->input('nom'),
+            'coefficient' => $request->input('coefficient'),
+            'ue_id' => $request->input('ue_id'),
+        ]);
+        return redirect()->route('ECs.store')->with('success', 'Élément Constitutif mis à jour avec succès !');
     }
 
     /**
@@ -75,6 +73,9 @@ class ECsController extends Controller
      */
     public function destroy($id)
     {
-        
+        $ecs = ECs::findOrFail($id);
+        $ecs->delete(); 
+    
+        return redirect()->route('ECs.store')->with('success', 'EC supprimée avec succès.');
     }
 }

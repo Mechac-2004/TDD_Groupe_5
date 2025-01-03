@@ -4,7 +4,7 @@
 
 <div class="container mx-auto py-15">
     <h1 class="text-2xl font-bold mb-6">Ajouter un EC</h1>
-    <form action="{{ route('store') }}" method="POST" class="space-y-2 bg-white p-2 shadow-lg rounded-lg  flex justify-between items-center bg-gray-100 p-4">
+    <form action="{{ route('ECs.store') }}" method="POST" class="space-y-2 bg-white p-2 shadow-lg rounded-lg  flex justify-between items-center bg-gray-100 p-4">
         @csrf
         <div>
             <label for="code" class="block font-normal text-sm">Code</label>
