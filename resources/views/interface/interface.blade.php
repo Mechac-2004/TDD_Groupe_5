@@ -15,6 +15,8 @@
             <div>         
                  <a href="{{route('UEs')}}" class="px-4 py-2 hover:bg-gray-700 rounded">Unités d'Enseignement</a>
                 <a href="{{route('ECs')}}" class="px-4 py-2 hover:bg-gray-700 rounded">Éléments Constitutifs</a>
+                <a href="{{route('Etudiants')}}" class="px-4 py-2 hover:bg-gray-700 rounded">Etudiants</a>
+                <a href="{{route('Notes')}}" class="px-4 py-2 hover:bg-gray-700 rounded">Notes</a>
             </div>
         </div>
     </nav>
@@ -26,20 +28,31 @@
           <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div class="bg-white shadow-lg rounded-lg p-6 text-center">
               <div class="card p-3">
-                <h5  class="text-xl font-semibold mb-2">GESTION DES NOTES DES ETUDIANTS</h5>
-                <p class="text-gray-600">Enregistrez rapidement les données des NOTES DE L'ETUDIANT.</p>
+                <h5  class="text-xl font-semibold mb-2">GESTION DES UNITES D'ENSEIGNEMENT</h5>
+                <p class="text-gray-600">BIEN GERER LES ELEMENTS CONSTITUTIFS.</p>
               </div>
             </div>
+
+
             <div class="bg-white shadow-lg rounded-lg p-6 text-center">
               <div class="bg-white shadow-lg rounded-lg p-6 text-center">
-                <h5 class="text-xl font-semibold mb-2">Suivi des NOTES DE L'ETUDIANT</h5>
-                <p class="text-gray-600">Gérez les NOTES en toute simplicité.</p>
+                <h5 class="text-xl font-semibold mb-2">GESTION DES ELEMENTS CONSTITUTIFS</h5>
+                <p class="text-gray-600">Gérez les elements constitutif  en toute simplicité.</p>
               </div>
             </div>
+
+
+            <div class="bg-white shadow-lg rounded-lg p-6 text-center">
+              <div class="bg-white shadow-lg rounded-lg p-6 text-center">
+                <h5 class="text-xl font-semibold mb-2">GESTION DES Etudiants</h5>
+                <p class="text-gray-600">Gérez leS etudiants.</p>
+              </div>
+            </div>
+
             <div class="bg-white shadow-lg rounded-lg p-6 text-center">
               <div class="card p-3">
-                <h5 class="text-xl font-semibold mb-2">Gestion des element Constitutifs</h5>
-                <p class="text-gray-600">Coordonnez les element constitutifs</p>
+                <h5 class="text-xl font-semibold mb-2">GESTION DES NOTES <i class="fas fa-notes-medical    "></i></h5>
+                <p class="text-gray-600">Facilite la gestion des Notes</p>
               </div>
             </div>
           </div>

@@ -20,3 +20,19 @@ Route::delete('/ues/{id}/destroy_ue', [UEsController::class, 'destroy'])->name('
 Route::get('/ECs', [ECsController::class, 'create'])->name('ECs');
 Route::post('/ECs', [ECsController::class, 'store'])->name('store');
 Route::get('/liste', [ECsController::class, 'index'])->name('liste');
+
+
+
+
+Route::get('/Notes', [NoteController::class, 'create'])->name('Notes');
+
+
+
+
+Route::get('/Etudiants', [EtudiantController::class, 'create'])->name('Etudiants');
+
+
+
+Route::get('/Notes', [NoteController::class, 'create'])->name('Notes');
+Route::post('/Notes', [NoteController::class, 'store'])->name('store_note');
+
