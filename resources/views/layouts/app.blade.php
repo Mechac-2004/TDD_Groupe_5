@@ -15,6 +15,8 @@
             <div>
                 <a href="{{ route('UEs.index') }}" class="px-4 py-2 hover:bg-gray-700 rounded">Unités d'Enseignement</a>
                 <a href="{{ route('ECs.index') }}" class="px-4 py-2 hover:bg-gray-700 rounded">Éléments Constitutifs</a>
+                <a href="{{ route('etudiants.index') }}" class="px-4 py-2 hover:bg-gray-700 rounded">Etudiants</a>
+                <a href="{{ route('notes.index') }}" class="px-4 py-2 hover:bg-gray-700 rounded">Notes</a>
             </div>
         </div>
     </nav>

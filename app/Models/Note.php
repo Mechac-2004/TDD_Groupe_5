@@ -10,10 +10,15 @@ class Note extends Model
 
     use HasFactory;
 
-    protected $table = 'note';
+    protected $table = 'notes';
 
-
-    protected $fillable = ['etudiant_id', 'ec_id', 'note', 'session', 'date_evaluation'];
+    protected $fillable = [
+        'etudiant_id',
+        'ec_id',
+        'note',
+        'session',
+        'date_evaluation'
+    ];
 
     public function etudiant()
     {
@@ -22,6 +27,6 @@ class Note extends Model
 
     public function elementsConstitutifs()
     {
-        return $this->belongsTo(ElementConstitutif::class, 'ec_id');
+        return $this->belongsTo(ECs::class, 'ec_id');
     }
 }

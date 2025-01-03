@@ -22,6 +22,6 @@ class UEs extends Model
     // Relation avec les éléments constitutifs 
     public function elementsConstitutifs()
     {
-        return $this->hasMany(ElementConstitutif::class, 'ue_id');
+        return $this->hasMany(ECs::class, 'ue_id');
     }
 }
