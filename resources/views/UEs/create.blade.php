@@ -35,14 +35,19 @@
                                 <option value="2">Semestre 2</option>
                             </select>
                         </td>
-                        <td class="px-4 py-2">
-                            <button type="button" class="text-red-500 remove-row">Supprimer</button>
-                        </td>
+                        {{-- <td class="px-4 py-2">
+                            <a href="{{ route('edit_ue', $ues->id) }}" class="text-blue-500 hover:underline">Modifier</a>
+                            <form action="{{ route('destroy', $ues->id) }}" method="POST" class="inline-block">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="text-red-500 hover:underline">Supprimer</button>
+                            </form>
+                        </td> --}}
                     </tr>
                 </tbody>
             </table>
             <div class="flex justify-end mt-6">
-                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">Ajouter UE</button>
+                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">Valider</button>
             </div>
         </form>
     </div>

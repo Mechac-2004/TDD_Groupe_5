@@ -12,15 +12,26 @@
                     <th class="px-4 py-2">Nom</th>
                     <th class="px-4 py-2">ECTS</th>
                     <th class="px-4 py-2">Semestre</th>
+                    <th class="px-4 py-2">Actions</th>
                 </tr>
             </thead>
             <tbody>
+                {{-- @foreach($ues as $ue) --}}
                 @forelse($ues as $ue)
                     <tr class="border-t border-gray-300 hover:bg-gray-50">
                         <td class="px-4 py-2">{{ $ue->code }}</td>
                         <td class="px-4 py-2">{{ $ue->nom }}</td>
                         <td class="px-4 py-2">{{ $ue->credits_ects }}</td>
                         <td class="px-4 py-2">S{{ $ue->semestre }}</td>
+                        <td class="px-4 py-2">
+                            <a href="{{ route('edit_ue', $ue->id) }}" class="text-blue-500 hover:underline">Modifier</a>
+                            {{-- <form action="{{ route('destroy_ue', $ue->id) }}" method="POST" class="inline-block"> --}}
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="text-red-500 hover:underline">Supprimer</button>
+                            </form>
+                        </td>
+                        
                     </tr>
                 @empty
                     <tr>

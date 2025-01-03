@@ -19,5 +19,12 @@ Route::post('/UEs', [UEsController::class, 'store'])->name('store');
 
 Route::get('/liste', [UEsController::class, 'index'])->name('liste');
 
+
+Route::get('/ues/{id}/edit_ue', [UEsController::class, 'edit'])->name('edit_ue');
+// Route::put('/ues/{id}', [UEsController::class, 'update'])->name('update_ue');
+// Route::delete('/ues/{id}', [UEsController::class, 'destroy'])->name('destroy_ue');
+
+
+
 Route::get('/ECs', function(){return view('ECs.create');}) ->name('ECs');
 Route::post('/ECs', [ECsController::class, 'store'])->name('store_ecs');

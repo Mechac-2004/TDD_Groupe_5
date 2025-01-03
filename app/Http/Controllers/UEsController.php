@@ -11,7 +11,7 @@ class UEsController extends Controller
 {
     public function create()
 {
-    $ues = UEs::all();  // Chargez les UEs si nécessaire
+    $ues = UEs::all(); 
     return view('UEs.create', compact('ues'));
 }
 
@@ -28,38 +28,50 @@ public function store(Request $request)
         ues::create($ueData);
     }
 
-    return redirect()->route('liste')->with('success', 'Les UEs ont été ajoutées avec succès.');
+    return redirect()->route('liste')->with('success', 'Les UE Bien enregistre');
 }
    
     public function index()
     {
         
-        $ues = UEs::all(); 
+        $ues = UEs::all();  
         return view('UEs.index', compact('ues'));
     }
 
 
     public function edit($id)
     {
-        
+        // $ues = UEs::where('id', $id)->findOrFail($id);
+        // $ues = UEs::findOrFail($id);
+        // $ues = UEs::find($id);
+        // return view('UEs.edit', compact('ues'));  
     }
 
-
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, $id)
     {
-        
-       
+        // $request->validate([
+        //     'code' => 'required|string|max:10',
+        //     'nom' => 'required|string|max:255',
+        //     'credits_ects' => 'required|integer|min:1',
+        //     'semestre' => 'required|integer|in:1,2',
+        // ]);
+    
+        // $ues = UEs::findOrFail($id);
+        // $ues->update([
+        //     'code' => $request->input('code'),
+        //     'nom' => $request->input('nom'),
+        //     'credits_ects' => $request->input('credits_ects'),
+        //     'semestre' => $request->input('semestre'),
+        // ]);
+    
+        // return redirect()->route('UEs.index')->with('success', 'UE mise à jour avec succès.');
     }
 
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(UEs $ue)
+    public function destroy($id)
     {
-      
+        // $ues = UEs::find($id);
+        // $ues->delete(); 
+    
+        // return redirect()->route('UEs.index')->with('success', 'UE supprimée avec succès.');
     }
 }
