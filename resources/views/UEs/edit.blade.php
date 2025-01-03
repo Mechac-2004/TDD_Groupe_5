@@ -6,7 +6,7 @@
     <div class="container mx-auto py-6">
         <h1 class="text-2xl font-bold mb-6">Modifier une UE</h1>
 
-        <form action="{{ route('update_ue', $ues->id) }}" method="POST" class="space-y-6 bg-white p-6 shadow-lg rounded-lg">
+        <form action="{{ route('UEs.update', $ues->id) }}" method="POST" class="space-y-6 bg-white p-6 shadow-lg rounded-lg">
             @csrf
             @method('PUT')
 

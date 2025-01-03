@@ -25,10 +25,11 @@ public function store(Request $request)
     ]);
 
     foreach ($validatedData['ues'] as $ueData) {
+        // ues::create($ueData);
         ues::create($ueData);
     }
 
-    return redirect()->route('liste')->with('success', 'Les UE Bien enregistre');
+    return redirect()->route('UEs.store')->with('success', 'Les UE Bien enregistre');
 }
    
     public function index()
@@ -62,7 +63,7 @@ public function store(Request $request)
             'semestre' => $request->input('semestre'),
         ]);
     
-       return redirect()->route('liste')->with('success', 'UE mise à jour avec succès.');
+       return redirect()->route('UEs.store')->with('success', 'UE mise à jour avec succès.');
     }
 
     public function destroy($id)
@@ -70,6 +71,6 @@ public function store(Request $request)
         $ues = UEs::findOrFail($id);
         $ues->delete(); 
     
-        return redirect()->route('liste')->with('success', 'UE supprimée avec succès.');
+        return redirect()->route('UEs.store')->with('success', 'UE supprimée avec succès.');
     }
 }

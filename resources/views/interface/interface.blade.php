@@ -13,10 +13,11 @@
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
             <a href="" class="text-xl font-bold">Système de Gestion des Notes UniversitaireS - LMD</a>
             <div>         
-                 <a href="{{route('UEs')}}" class="px-4 py-2 hover:bg-gray-700 rounded">Unités d'Enseignement</a>
-                <a href="{{route('ECs')}}" class="px-4 py-2 hover:bg-gray-700 rounded">Éléments Constitutifs</a>
-                <a href="{{route('Etudiants')}}" class="px-4 py-2 hover:bg-gray-700 rounded">Etudiants</a>
-                <a href="{{route('Notes')}}" class="px-4 py-2 hover:bg-gray-700 rounded">Notes</a>
+                 <a href="{{route('UEs.create')}}" class="px-4 py-2 hover:bg-gray-700 rounded">Unités d'Enseignement</a>
+                <a href="{{route('ECs.create')}}" class="px-4 py-2 hover:bg-gray-700 rounded">Éléments Constitutifs</a>
+                <a href="{{route('Etudiants.create')}}" class="px-4 py-2 hover:bg-gray-700 rounded">Etudiants</a>
+                <a href="{{route('Notes.create')}}" class="px-4 py-2 hover:bg-gray-700 rounded">Notes</a>
+                <a href="{{route('Resultats.create')}}" class="px-4 py-2 hover:bg-gray-700 rounded">Resultats</a>
             </div>
         </div>
     </nav>
