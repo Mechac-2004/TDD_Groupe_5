@@ -22,7 +22,7 @@ Route::get('/liste', [UEsController::class, 'index'])->name('liste');
 
 Route::get('/ues/{id}/edit_ue', [UEsController::class, 'edit'])->name('edit_ue');
 Route::put('/ues/{id}/update_ue', [UEsController::class, 'update'])->name('update_ue');
-// Route::delete('/ues/{id}', [UEsController::class, 'destroy'])->name('destroy_ue');
+Route::delete('/ues/{id}/destroy_ue', [UEsController::class, 'destroy'])->name('destroy_ue');
 
 
 

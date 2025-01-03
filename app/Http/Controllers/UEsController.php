@@ -64,14 +64,15 @@ public function store(Request $request)
             'semestre' => $request->input('semestre'),
         ]);
     
-        return redirect()->route('UEs.index')->with('success', 'UE mise à jour avec succès.');
+       return redirect()->route('liste')->with('success', 'UE mise à jour avec succès.');
     }
 
     public function destroy($id)
     {
         // $ues = UEs::find($id);
-        // $ues->delete(); 
+        $ues = UEs::findOrFail($id);
+        $ues->delete(); 
     
-        // return redirect()->route('UEs.index')->with('success', 'UE supprimée avec succès.');
+        return redirect()->route('liste')->with('success', 'UE supprimée avec succès.');
     }
 }

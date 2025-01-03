@@ -25,7 +25,7 @@
                         <td class="px-4 py-2">S{{ $ue->semestre }}</td>
                         <td class="px-4 py-2">
                             <a href="{{ route('edit_ue', $ue->id) }}" class="text-blue-500 hover:underline">Modifier</a>
-                            {{-- <form action="{{ route('destroy_ue', $ue->id) }}" method="POST" class="inline-block"> --}}
+                            <form action="{{ route('destroy_ue', $ue->id) }}" method="POST" class="inline-block">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="text-red-500 hover:underline">Supprimer</button>
