@@ -41,9 +41,7 @@ public function store(Request $request)
 
     public function edit($id)
     {
-        // $ues = UEs::where('id', $id)->findOrFail($id);
         $ues = UEs::findOrFail($id);
-        // $ues = UEs::find($id);
         return view('UEs.edit', compact('ues'));  
     }
 
@@ -69,7 +67,6 @@ public function store(Request $request)
 
     public function destroy($id)
     {
-        // $ues = UEs::find($id);
         $ues = UEs::findOrFail($id);
         $ues->delete(); 
     

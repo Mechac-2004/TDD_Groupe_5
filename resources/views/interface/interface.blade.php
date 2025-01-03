@@ -18,13 +18,40 @@
             </div>
         </div>
     </nav>
+<P>
+    
+    <section id="features" class="py-5">
+        <div class="container">
+          <h3 class="text-3xl font-bold text-center mb-8">Fonctionnalités Clés</h3>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white shadow-lg rounded-lg p-6 text-center">
+              <div class="card p-3">
+                <h5  class="text-xl font-semibold mb-2">GESTION DES NOTES DES ETUDIANTS</h5>
+                <p class="text-gray-600">Enregistrez rapidement les données des NOTES DE L'ETUDIANT.</p>
+              </div>
+            </div>
+            <div class="bg-white shadow-lg rounded-lg p-6 text-center">
+              <div class="bg-white shadow-lg rounded-lg p-6 text-center">
+                <h5 class="text-xl font-semibold mb-2">Suivi des NOTES DE L'ETUDIANT</h5>
+                <p class="text-gray-600">Gérez les NOTES en toute simplicité.</p>
+              </div>
+            </div>
+            <div class="bg-white shadow-lg rounded-lg p-6 text-center">
+              <div class="card p-3">
+                <h5 class="text-xl font-semibold mb-2">Gestion des element Constitutifs</h5>
+                <p class="text-gray-600">Coordonnez les element constitutifs</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-    <!-- Contenu principal -->
+</P>
+    
     <div class="container mx-auto mt-8 px-4">
         @yield('content')
     </div>
 
-    <!-- Pied de page -->
     <footer class="bg-blue-600 text-white shadow-lg">
         &copy; {{ date('Y') }} Système de Gestion des Notes UniversitaireS - LMD. Tous droits réservés.
     </footer>
