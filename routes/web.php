@@ -28,18 +28,29 @@ Route::delete('/ecs/{id}/destroy', [UEsController::class, 'destroy'])->name('ECs
 
 
 Route::get('/notes/create', [NoteController::class, 'create'])->name('Notes.create');
+Route::post('/notes/store', [UEsController::class, 'store'])->name('Notes.store');
+Route::get('/notes', [UEsController::class, 'index'])->name('Notes.index');
+Route::get('/notes/{id}/edit', [UEsController::class, 'edit'])->name('Notes.edit');
+Route::put('/notes/{id}', [UEsController::class, 'update'])->name('Notes.update');
+Route::delete('/notes/{id}', [UEsController::class, 'destroy'])->name('Notes.destroy');
 
 
 
 
 Route::get('/etudiants/create', [EtudiantController::class, 'create'])->name('Etudiants.create');
+Route::post('/etudiants/store', [UEsController::class, 'store'])->name('Etudiants.store');
+Route::get('/etudiants', [UEsController::class, 'index'])->name('Etudiants.index');
+Route::get('/etudiants/{id}/edit', [UEsController::class, 'edit'])->name('Etudiants.edit');
+Route::put('/etudiants/{id}', [UEsController::class, 'update'])->name('Etudiants.update');
+Route::delete('/etudiants/{id}', [UEsController::class, 'destroy'])->name('Etudiants.destroy');
 
 
 
-Route::get('/notes/create', [NoteController::class, 'create'])->name('Notes.create');
-Route::post('/notes/store', [NoteController::class, 'store'])->name('Notes.store');
+Route::get('/resultats/create', [NoteController::class, 'create'])->name('Resultats.create');
+Route::post('/resultats/store', [UEsController::class, 'store'])->name('Resultats.store');
+Route::get('/resultats', [UEsController::class, 'index'])->name('Resultats.index');
+Route::get('/resultats/{id}/edit', [UEsController::class, 'edit'])->name('Resultats.edit');
+Route::put('/resultats/{id}', [UEsController::class, 'update'])->name('Resultats.update');
+Route::delete('/resultats/{id}', [UEsController::class, 'destroy'])->name('Resultats.destroy');
 
-
-
-Route::get('/Resultats', [ResultatController::class, 'create'])->name('Resultats.create');
 

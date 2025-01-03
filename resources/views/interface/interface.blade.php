@@ -27,28 +27,26 @@
         <div class="container">
           <h3 class="text-3xl font-bold text-center mb-8">Fonctionnalités Clés</h3>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="bg-white shadow-lg rounded-lg p-6 text-center">
-              <div class="card p-3">
+           
+              <div class="bg-yellow shadow-lg rounded-lg p-6 text-center">
                 <h5  class="text-xl font-semibold mb-2">GESTION DES UNITES D'ENSEIGNEMENT</h5>
                 <p class="text-gray-600">BIEN GERER LES ELEMENTS CONSTITUTIFS.</p>
               </div>
-            </div>
+            
 
 
-            <div class="bg-white shadow-lg rounded-lg p-6 text-center">
               <div class="bg-white shadow-lg rounded-lg p-6 text-center">
                 <h5 class="text-xl font-semibold mb-2">GESTION DES ELEMENTS CONSTITUTIFS</h5>
                 <p class="text-gray-600">Gérez les elements constitutif  en toute simplicité.</p>
               </div>
-            </div>
 
 
-            <div class="bg-white shadow-lg rounded-lg p-6 text-center">
+            
               <div class="bg-white shadow-lg rounded-lg p-6 text-center">
                 <h5 class="text-xl font-semibold mb-2">GESTION DES Etudiants</h5>
                 <p class="text-gray-600">Gérez leS etudiants.</p>
               </div>
-            </div>
+          
 
             <div class="bg-white shadow-lg rounded-lg p-6 text-center">
               <div class="card p-3">
@@ -56,6 +54,14 @@
                 <p class="text-gray-600">Facilite la gestion des Notes</p>
               </div>
             </div>
+
+            <div class="bg-white shadow-lg rounded-lg p-6 text-center">
+              <div class="card p-3">
+                <h5 class="text-xl font-semibold mb-2">GESTION DES RESULTATS <i class="fas fa-notes-medical    "></i></h5>
+                <p class="text-gray-600">Facilite la gestion des Resultats</p>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
