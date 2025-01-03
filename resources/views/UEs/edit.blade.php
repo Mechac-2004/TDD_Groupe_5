@@ -6,7 +6,7 @@
     <div class="container mx-auto py-6">
         <h1 class="text-2xl font-bold mb-6">Modifier une UE</h1>
 
-        <form action="{{ route('UEs.update', $ues->id) }}" method="POST" class="space-y-6 bg-white p-6 shadow-lg rounded-lg">
+        <form action="{{ route('update_ue', $ues->id) }}" method="POST" class="space-y-6 bg-white p-6 shadow-lg rounded-lg">
             @csrf
             @method('PUT')
 
@@ -31,8 +31,8 @@
             <div>
                 <label for="semestre" class="block text-sm font-medium text-gray-700">Semestre</label>
                 <select name="semestre" id="semestre" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm">
-                    <option value="1" {{ old('semestre', $ue->semestre) == 1 ? 'selected' : '' }}>Semestre 1</option>
-                    <option value="2" {{ old('semestre', $ue->semestre) == 2 ? 'selected' : '' }}>Semestre 2</option>
+                    <option value="1" {{ old('semestre', $ues->semestre) == 1 ? 'selected' : '' }}>Semestre 1</option>
+                    <option value="2" {{ old('semestre', $ues->semestre) == 2 ? 'selected' : '' }}>Semestre 2</option>
                 </select>
             </div>
 

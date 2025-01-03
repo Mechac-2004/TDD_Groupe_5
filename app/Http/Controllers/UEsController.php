@@ -42,29 +42,29 @@ public function store(Request $request)
     public function edit($id)
     {
         // $ues = UEs::where('id', $id)->findOrFail($id);
-        // $ues = UEs::findOrFail($id);
+        $ues = UEs::findOrFail($id);
         // $ues = UEs::find($id);
-        // return view('UEs.edit', compact('ues'));  
+        return view('UEs.edit', compact('ues'));  
     }
 
     public function update(Request $request, $id)
     {
-        // $request->validate([
-        //     'code' => 'required|string|max:10',
-        //     'nom' => 'required|string|max:255',
-        //     'credits_ects' => 'required|integer|min:1',
-        //     'semestre' => 'required|integer|in:1,2',
-        // ]);
+        $request->validate([
+            'code' => 'required|string|max:10',
+            'nom' => 'required|string|max:255',
+            'credits_ects' => 'required|integer|min:1',
+            'semestre' => 'required|integer|in:1,2',
+        ]);
     
-        // $ues = UEs::findOrFail($id);
-        // $ues->update([
-        //     'code' => $request->input('code'),
-        //     'nom' => $request->input('nom'),
-        //     'credits_ects' => $request->input('credits_ects'),
-        //     'semestre' => $request->input('semestre'),
-        // ]);
+        $ues = UEs::findOrFail($id);
+        $ues->update([
+            'code' => $request->input('code'),
+            'nom' => $request->input('nom'),
+            'credits_ects' => $request->input('credits_ects'),
+            'semestre' => $request->input('semestre'),
+        ]);
     
-        // return redirect()->route('UEs.index')->with('success', 'UE mise à jour avec succès.');
+        return redirect()->route('UEs.index')->with('success', 'UE mise à jour avec succès.');
     }
 
     public function destroy($id)
