@@ -22,7 +22,8 @@ class ECsController extends Controller
      */
     public function create()
     {
-        return view('ECs.create');
+        $ecs = ECs::all(); 
+    return view('ECs.create', compact('ecs'));
        
     }
 
@@ -38,8 +39,13 @@ class ECsController extends Controller
             'ue_id' => 'required|exists:unites_enseignement,id',
         ]);
 
-        ECs::create($request->all());
-        return redirect()->route('ECs.index')->with('success', 'Élément Constitutif ajouté avec succès !');
+        foreach ($validatedData['ecs'] as $ecData) {
+            ecs::create($ecData);
+        }
+    
+        return redirect()->route('liste')->with('success', 'Les UE Bien enregistre');
+        // ECs::create($request->all());
+        // return redirect()->route('ECs.index')->with('success', 'Élément Constitutif ajouté avec succès !');
     }
 
 

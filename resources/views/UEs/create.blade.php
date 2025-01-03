@@ -35,14 +35,6 @@
                                 <option value="2">Semestre 2</option>
                             </select>
                         </td>
-                        {{-- <td class="px-4 py-2">
-                            <a href="{{ route('edit_ue', $ues->id) }}" class="text-blue-500 hover:underline">Modifier</a>
-                            <form action="{{ route('destroy', $ues->id) }}" method="POST" class="inline-block">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="text-red-500 hover:underline">Supprimer</button>
-                            </form>
-                        </td> --}}
                     </tr>
                 </tbody>
             </table>

@@ -17,6 +17,6 @@ Route::put('/ues/{id}/update_ue', [UEsController::class, 'update'])->name('updat
 Route::delete('/ues/{id}/destroy_ue', [UEsController::class, 'destroy'])->name('destroy_ue');
 
 
-
-Route::get('/ECs', function(){return view('ECs.create');}) ->name('ECs');
-Route::post('/ECs', [ECsController::class, 'store'])->name('store_ecs');
+Route::get('/ECs', [ECsController::class, 'create'])->name('ECs');
+Route::post('/ECs', [ECsController::class, 'store'])->name('store');
+Route::get('/liste', [ECsController::class, 'index'])->name('liste');
