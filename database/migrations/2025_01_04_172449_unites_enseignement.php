@@ -12,12 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('unites_enseignement', function (Blueprint $table) {
-            $table->id(); 
-            $table->string('code')->unique(); // Code unique de l'UE (ex: UE11)
-            $table->string('nom'); 
-            $table->integer('credits_ects'); 
-            $table->integer('semestre'); 
-            $table->timestamps(); // Champs created_at et updated_at
+            $table->id();
+            $table->string('code')->unique();
+            $table->string('nom');
+            $table->integer('credits_ects');
+            $table->integer('semestre'); // 1 à 6
+            $table->timestamps();
         });
     }
 
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('unites_enseignement');
+        //
     }
 };

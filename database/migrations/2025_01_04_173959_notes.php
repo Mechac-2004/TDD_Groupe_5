@@ -12,13 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('notes', function (Blueprint $table) {
-            $table->id(); 
-            $table->etudiant_id(); 
-            $table->ec_id(); 
-            $table->number('note');
-            $table->string('session')->unique(); // Code unique de l'UE (ex: UE11)
-            $table->date('date_evaluation'); 
-            $table->timestamps(); // Champs created_at et updated_at
+            $table->id();
+            $table->foreignId('etudiant_id')->constrained('etudiants')->onDelete('cascade');
+            $table->foreignId('ec_id')->constrained('elements_constitutifs')->onDelete('cascade');
+            $table->float('note');
+            $table->string('session'); // normale ou rattrapage
+            $table->date('date_evaluation');
+            $table->timestamps();
         });
     }
 
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('notes');
+        //
     }
 };

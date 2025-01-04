@@ -2,17 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ECs;
-use App\Models\Etudiant;
-use App\Models\Note;
-use App\Models\UEs;
 use Illuminate\Http\Request;
+use App\Models\ECs;
+use App\Models\Etudiants;
+use App\Models\Notes;
+use App\Models\UEs;
 
-class NoteController extends Controller
+class NotesController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+
     public function index()
     {
 
@@ -35,9 +33,6 @@ class NoteController extends Controller
     }
 
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
         $etudiants = Etudiant::all();
@@ -56,9 +51,6 @@ class NoteController extends Controller
         return response()->json($ecs);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
             $validated = $request->validate([
@@ -72,20 +64,10 @@ class NoteController extends Controller
             $note = new Note();
             $note->create($validated);
         
-            return redirect()->route('notes.index')->with('success', 'Note enregistrée avec succès');
+            return redirect()->route('Notes.index')->with('success', 'Note enregistrée avec succès');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
+   
     public function edit($id)
     {
         $note = Note::select(
@@ -107,13 +89,7 @@ class NoteController extends Controller
 
         return view('Notes.edit', compact('note', 'ues', 'ecs', 'etudiants'));
     }
-
-    
-    
-
-    /**
-     * Update the specified resource in storage.
-     */
+  
     public function update(Request $request, $id)
     {
         $validated = $request->validate([
@@ -127,15 +103,12 @@ class NoteController extends Controller
         $note = Note::findOrFail($id);
         $note->update($validated);
     
-        return redirect()->route('notes.index')->with('success', 'Note mise à jour avec succès');
+        return redirect()->route('Notes.index')->with('success', 'Note mise à jour avec succès');
     }
-    
-
-    /**
-     * Remove the specified resource from storage.
-     */
+  
     public function destroy(string $id)
     {
         //
     }
+
 }

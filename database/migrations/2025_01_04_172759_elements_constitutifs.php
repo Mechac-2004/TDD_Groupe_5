@@ -12,12 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('elements_constitutifs', function (Blueprint $table) {
-            $table->id(); 
+            $table->id();
             $table->string('code')->unique();
-            $table->string('nom'); 
-            $table->integer('coefficient'); 
-            $table->foreignId('ue_id')->constrained('unites_enseignement')->onDelete('cascade'); 
-            $table->timestamps(); // Champs created_at et updated_at
+            $table->string('nom');
+            $table->float('coefficient');
+            $table->foreignId('ue_id')->constrained('unites_enseignement')->onDelete('cascade');
+            $table->timestamps();
         });
     }
 
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('elements_constitutifs');
+        //
     }
 };

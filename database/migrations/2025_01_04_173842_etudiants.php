@@ -12,14 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('etudiants', function (Blueprint $table) {
-            $table->id(); 
-            $table->number('numero_etudiant'); 
+            $table->id();
+            $table->string('numero_etudiant')->unique();
             $table->string('nom');
             $table->string('prenom');
-            $table->string('niveau'); // Code unique de l'UE (ex: UE11)
-            $table->date('date_evaluation'); 
-            $table->timestamps(); // Champs created_at et updated_at
-        });
+            $table->string('niveau'); // L1, L2, L3
+            $table->timestamps();
+        }); 
     }
 
     /**
@@ -27,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('etudiants');
+        //
     }
 };

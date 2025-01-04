@@ -3,7 +3,8 @@
 @section('title', 'Ajouter une UEs')
 
 @section('content')
-    <div class="container mx-auto py-15">
+    {{-- <div class="container mx-auto py-15"> --}}
+    <div class="container mx-auto mt-8 px-4">
         <form action="{{ route('UEs.store') }}" method="POST" class="space-y-6 bg-white p-6 shadow-lg rounded-lg">
             @csrf
             

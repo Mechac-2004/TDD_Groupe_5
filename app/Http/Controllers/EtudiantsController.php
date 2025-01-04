@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Etudiant;
+use App\Models\Etudiants;
 use App\Models\UEs;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
-class EtudiantController extends Controller
+class EtudiantsController extends Controller
 {
     public function index()
     {
