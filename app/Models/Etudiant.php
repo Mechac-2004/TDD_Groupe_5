@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Support\Str;
 
 class Etudiant extends Model
 {
@@ -24,5 +25,19 @@ class Etudiant extends Model
     public function notes()
     {
         return $this->hasMany(Note::class);
+    }
+
+    public function genererNumeroEtudiant()
+    {
+        $countryID = 'BJ';
+        $schoolID = 'ESGIS';
+        $currentYear = date('Y');
+    
+        do {
+            $sequence = Str::lower(Str::random(5));
+            $matricule = "$sequence$schoolID$currentYear$countryID";
+        } while (Etudiant::where('numero_etudiant', $matricule)->exists());
+    
+        return $matricule;
     }
 }
