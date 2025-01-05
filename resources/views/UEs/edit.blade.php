@@ -1,7 +1,7 @@
 
 @extends('interface.interface')
 
-@section('title', 'Modification de l'Unité d'Enseignement')
+@section('title', 'Modification de l\'Unité d\'Enseignement')
 
 @section('content')
 <div class="container mx-auto py-8">
@@ -32,6 +32,9 @@
         </div>
         <div>
             <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-700">Mettre à jour</button>
+            <a href="{{ route('UEs.index') }}" class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600">
+                Annuler
+            </a>
         </div>
     </form>
 </div>

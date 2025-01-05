@@ -35,5 +35,7 @@
         </div>
 
         <button type="submit" class="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600 mt-4 w-full">Mettre à jour</button>
+        
+        <button type="submit" class="bg-gray-500 text-white px-6 py-2 rounded hover:bg-red-600 mt-4 w-full"> <a href="{{ route('etudiants.index') }}" >Annuler</a></button>
     </form>
 @endsection

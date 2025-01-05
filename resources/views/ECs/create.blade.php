@@ -2,6 +2,7 @@
 @section('title', 'Ajouter une EC')
 @section('content')
 <div class="container mx-auto py-8">
+<a href="{{ route('ECs.index') }}" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 mb-4 inline-block">Liste des ECs</a>
     <h1 class="text-2xl font-bold mb-6">Ajouter un EC</h1>
     <form action="{{ route('ECs.store') }}" method="POST" class="space-y-6">
         @csrf

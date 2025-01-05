@@ -9,7 +9,7 @@
 <body class="bg-gray-100 text-gray-800">
 
     <!-- Navigation -->
-    <nav class="bg-blue-600 text-white shadow-lg">
+    <nav class="bg-blue-600 text-white shadow-lg fixed top-0 left-0 w-full">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
             <a href="" class="text-xl font-bold">Système de Gestion des Notes UniversitaireS - LMD</a>
             <div>         
@@ -22,7 +22,7 @@
     </nav>
 
   <p>
-    <section id="features" class="py-5">
+    <section id="features" class="mt-16">
         <div class="container">
           <h3 class="text-3xl font-bold text-center mb-8">Fonctionnalités Clés</h3>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -39,7 +39,7 @@
 
               <div class="bg-white shadow-lg rounded-lg p-6 text-center">
                 <h5 class="text-xl font-semibold mb-2">GESTION DES Etudiants</h5>
-                <p class="text-gray-600">Gérez leS etudiants.</p>
+                <p class="text-gray-600">Gérez les etudiants.</p>
               </div>
           
 

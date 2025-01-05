@@ -1,6 +1,6 @@
 @extends('interface.interface')
 
-@section('title', 'Modification d'un élément Constitutif')
+@section('title', 'Modification d\'un élément Constitutif')
 
 @section('content')
 <div class="container mx-auto py-8">
