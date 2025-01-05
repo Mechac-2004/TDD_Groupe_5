@@ -1,5 +1,5 @@
-@extends('layouts.app')
-
+@extends('interface.interface')
+@section('title', 'Ajouter une EC')
 @section('content')
 <div class="container mx-auto py-8">
     <h1 class="text-2xl font-bold mb-6">Ajouter un EC</h1>

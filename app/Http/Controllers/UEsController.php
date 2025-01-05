@@ -80,9 +80,11 @@ class UEsController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(UEs $ue)
-    {
-        $ue->delete();
-        return redirect()->route('UEs.index')->with('success', 'UE supprimée avec succès !');
-    }
+    public function destroy($id)
+{
+    $ue = UEs::findOrFail($id);
+    $ue->delete();
+    return redirect()->route('UEs.index')->with('success', 'UE supprimée avec succès !');
+}
+
 }

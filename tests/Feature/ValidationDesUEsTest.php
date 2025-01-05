@@ -20,6 +20,7 @@ class ValidationDesUEsTest extends TestCase
         $ue = UEs::factory()->create([
             'nom' => 'Mathématiques',
             'credits_ects' => 6,
+            'semestre' => 6,
         ]);
 
         $ec1 = ECs::factory()->create([

@@ -1,4 +1,6 @@
-@extends('layouts.app')
+@extends('interface.interface')
+
+@section('title', 'Liste des ECs')
 
 @section('content')
 <div class="container mx-auto py-8">

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('interface.interface')
 
 @section('title', 'Enregistrer un nouvel étudiant')
 

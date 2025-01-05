@@ -1,8 +1,10 @@
+
 <!-- resources/views/ues/create.blade.php -->
-@extends('layouts.app')
+@extends('interface.interface')
 
 @section('content')
 <div class="container mx-auto py-8">
+<a href="{{ route('UEs.index') }}" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 mb-4 inline-block">Liste des UEs</a>
     <h1 class="text-2xl font-bold mb-6">Ajouter une UE</h1>
     <form action="{{ route('UEs.store') }}" method="POST" class="space-y-4">
         @csrf
@@ -26,5 +28,12 @@
             Enregistrer
         </button>
     </form>
+    
 </div>
+
+    @if(session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
 @endsection

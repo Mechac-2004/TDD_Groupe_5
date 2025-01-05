@@ -8,9 +8,12 @@ use App\Models\Etudiant;
 use App\Models\Note;
 use App\Models\UEs;
 use Tests\TestCase;
+use Illuminate\Foundation\Testing\WithoutMiddleware;
 
 class GestionDesNotesTest extends TestCase
 {
+
+    use WithoutMiddleware;
     /**
      * Test pour vajouter une note valide
      */
@@ -18,7 +21,9 @@ class GestionDesNotesTest extends TestCase
     {
         $etudiant = Etudiant::factory()->create();
 
-        $ue = UEs::factory()->create();
+        $ue = UEs::factory()->create([
+            'semestre' => 6, 
+        ]);
         $ec = ECs::factory()->create([
             'ue_id' => $ue->id,
         ]);
@@ -43,7 +48,9 @@ class GestionDesNotesTest extends TestCase
      */
     public function test_calcul_moyenne_ue()
     {
-        $ue = UEs::factory()->create();
+        $ue = UEs::factory()->create([
+            'semestre' => 6,
+        ]);
         $ec1 = ECs::factory()->create(['ue_id' => $ue->id, 'coefficient' => 2]);
         $ec2 = ECs::factory()->create(['ue_id' => $ue->id, 'coefficient' => 3]);
 
@@ -80,7 +87,9 @@ class GestionDesNotesTest extends TestCase
     public function test_la_session_est_valide_uniquement_si_normale_ou_rattrapage()
     {
         $etudiant = Etudiant::factory()->create();
-        $ue = UEs::factory()->create();
+        $ue = UEs::factory()->create([
+            'semestre' => 6, 
+        ]);
         $ec = ECs::factory()->create(['ue_id' => $ue->id]);
 
         $donneesSessionNormale = [
@@ -127,7 +136,9 @@ class GestionDesNotesTest extends TestCase
     public function test_validation_des_notes_manquantes()
     {
         $etudiant = Etudiant::factory()->create();
-        $ue = UEs::factory()->create();
+        $ue = UEs::factory()->create([
+            'semestre' => 6,
+        ]);
         $ec = ECs::factory()->create(['ue_id' => $ue->id]);
 
         $response = $this->post(route('notes.store'), [

@@ -21,7 +21,7 @@ class ECsFactory extends Factory
     public function definition(): array
     {
         return [
-            'code' => fake()->unique()->bothify('EC##'),
+            'code' => fake()->unique()->numberBetween(100, 999),
             'nom' => fake()->name() ,
             'coefficient' => fake()->numberBetween(1, 5),
             'ue_id' => UEs::factory(),

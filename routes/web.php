@@ -6,12 +6,12 @@ use App\Http\Controllers\UEsController;
 use App\Http\Controllers\ECsController;
 use App\Http\Controllers\EtudiantController;
 use App\Http\Controllers\NoteController;
+use resources\views\UEs\create;
+
 
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('/UEs', [UEsController::class, 'index'])->name('UEs.index');
 
 Route::resource('UEs', UEsController::class);
 Route::resource('ECs', ECsController::class);
@@ -25,3 +25,5 @@ Route::resource('etudiants', EtudiantController::class)
 Route::get('/notes/getEcsByUe/{ueId}', [NoteController::class, 'getEcsByUe']);
 Route::resource('notes', NoteController::class)
     ->except(['destroy', 'show']);
+
+

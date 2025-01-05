@@ -1,5 +1,8 @@
+
 <!-- resources/views/ues/index.blade.php -->
-@extends('layouts.app')
+@extends('interface.interface')
+
+@section('title', 'Liste des UEs')
 
 @section('content')
 <div class="container mx-auto py-8">
@@ -29,7 +32,7 @@
                             <a href="{{ route('UEs.edit', $ue->id) }}" class="text-blue-500 hover:underline">
                                 Modifier
                             </a>
-                            <form action="{{ route('UEs.destroy', $ue->id) }}" method="POST" onsubmit="return confirm('Voulez-vous vraiment supprimer cette UE ?');">
+                            <form action="{{ route('UEs.destroy', $ue->id) }}" method="POST" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cette UE ?');">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="text-red-500 hover:underline">
@@ -42,5 +45,4 @@
             </tbody>
         </table>
     </div>
-</div>
 @endsection

@@ -1,4 +1,7 @@
-@extends('layouts.app')
+
+@extends('interface.interface')
+
+@section('title', 'Modification de l'Unité d'Enseignement')
 
 @section('content')
 <div class="container mx-auto py-8">
@@ -32,4 +35,5 @@
         </div>
     </form>
 </div>
+
 @endsection
