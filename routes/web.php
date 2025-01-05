@@ -16,6 +16,7 @@ Route::get('/UEs', [UEsController::class, 'index'])->name('UEs.index');
 Route::resource('UEs', UEsController::class);
 Route::resource('ECs', ECsController::class);
 
+Route::get('/etudiants/{etudiant}/resultats-par-semestre', [EtudiantController::class, 'afficherResultatsParSemestre'])->name('etudiants.semestre');
 Route::get('/etudiants/{etudiant}/stats', [EtudiantController::class, 'showStats'])->name('etudiants.stats');
 Route::get('/etudiants/parNiveau/{niveau}', [EtudiantController::class, 'parNiveau']);
 Route::resource('etudiants', EtudiantController::class)

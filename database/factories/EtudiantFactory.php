@@ -2,8 +2,8 @@
 
 namespace Database\Factories;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\Etudiant;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Etudiant>
@@ -15,15 +15,16 @@ class EtudiantFactory extends Factory
      *
      * @return array<string, mixed>
      */
+
     protected $model = Etudiant::class;
 
-    public function definition(): array
+    public function definition()
     {
         return [
-            'numero_etudiant' => fake()->unique()->randomNumber(8),
-            'nom' => fake()->name() ,
-            'prenom' => fake()->name() ,
-            'niveau' => fake()->randomElement(['L1', 'L2', 'L3',]),
+            'numero_etudiant' => (new Etudiant())->genererNumeroEtudiant(),
+            'nom' => $this->faker->unique()->lastName,
+            'prenom' => $this->faker->unique()->firstName,
+            'niveau' => $this->faker->randomElement(['L1', 'L2', 'L3']),
         ];
     }
 }

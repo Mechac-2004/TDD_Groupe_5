@@ -24,7 +24,7 @@ class ECsFactory extends Factory
             'code' => fake()->unique()->bothify('EC##'),
             'nom' => fake()->name() ,
             'coefficient' => fake()->numberBetween(1, 5),
-            'ue_id' => UEs::factory(), // Relation avec une UE
+            'ue_id' => UEs::factory(),
         ];
     }
 }
