@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UEsController;
 use App\Http\Controllers\ECsController;
 use resources\views\UEs\create;
+use App\Http\Controllers\EtudiantsController;
+use App\Http\Controllers\NotesController;
+
 
 Route::get('/', function () {
     return view('interface/interface');
@@ -40,10 +43,10 @@ Route::delete('/notes/{id}', [NotesController::class, 'destroy'])->name('Notes.d
 
 Route::get('/etudiants/create', [EtudiantsController::class, 'create'])->name('Etudiants.create');
 Route::post('/etudiants/store', [EtudiantsController::class, 'store'])->name('Etudiants.store');
-Route::get('/etudiants', [EtudiantsController::class, 'index'])->name('Etudiants.index');
+Route::get('/etudiants',        [EtudiantsController::class, 'index'])->name('Etudiants.index');
 Route::get('/etudiants/{id}/edit', [EtudiantsController::class, 'edit'])->name('Etudiants.edit');
-Route::put('/etudiants/{id}', [EtudiantsController::class, 'update'])->name('Etudiants.update');
-Route::delete('/etudiants/{id}', [EtudiantsController::class, 'destroy'])->name('Etudiants.destroy');
+Route::put('/etudiants/{id}',      [EtudiantsController::class, 'update'])->name('Etudiants.update');
+Route::delete('/etudiants/{id}',   [EtudiantsController::class, 'destroy'])->name('Etudiants.destroy');
 
 
 

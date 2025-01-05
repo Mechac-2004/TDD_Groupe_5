@@ -35,7 +35,7 @@ class NotesController extends Controller
 
     public function create()
     {
-        $etudiants = Etudiant::all();
+        $etudiants = Etudiants::all();
         $ues = UEs::all();
         return view('Notes.create', compact('etudiants', 'ues'));
     }
